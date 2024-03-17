@@ -43,10 +43,10 @@ impl SvgRgbaToHexReplacer {
 }
 impl Replacer for SvgRgbaToHexReplacer {
     fn replace_append(&mut self, caps: &Captures<'_>, dst: &mut String) {
-        let red: f32 = caps["red"].trim().parse().expect("Erro durante o parse da cor");
-        let green: f32 = caps["green"].trim().parse().expect("Erro durante o parse da cor");
-        let blue: f32 = caps["blue"].trim().parse().expect("Erro durante o parse da cor");
-        let alpha: f32 = caps["alpha"].trim().parse().expect("Erro durante o parse da opacidade");
+        let red: f32 = caps["red"].trim().parse().expect("Error while parsing color");
+        let green: f32 = caps["green"].trim().parse().expect("Error while parsing color");
+        let blue: f32 = caps["blue"].trim().parse().expect("Error while parsing color");
+        let alpha: f32 = caps["alpha"].trim().parse().expect("Error while parsing color");
         dst.push_str(&SvgRgbaToHexReplacer::convert_to_hex(red, green, blue, alpha))
     }
 }
